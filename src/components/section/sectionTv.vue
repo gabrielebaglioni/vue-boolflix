@@ -1,7 +1,10 @@
 <template>
   <ul>
      <li v-for="film in sharedComponents.films" :key="film.id">
-          {{film.name}} , {{film.original_name}} , {{film.original_language}} , {{film.vote_average}}
+          <h3>{{film.name}} </h3> 
+          <h4>{{film.original_name}} </h4> 
+          <img src="" alt="">{{film.original_language}} 
+          <h5> {{film.vote_average}}</h5>
      </li>
   </ul>
 </template>

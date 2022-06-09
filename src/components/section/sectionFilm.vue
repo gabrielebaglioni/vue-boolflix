@@ -1,7 +1,11 @@
 <template>
   <ul>
      <li v-for="film in sharedComponents.films" :key="film.id">
-          {{film.title}} , {{film.original_title}} , {{film.original_language}} , {{film.vote_average}}
+          <h3>{{film.title}}</h3>  
+          <h4>{{film.original_title}}</h4> 
+          <!-- <img :src="getFlegs(film.original_language)" alt=""> -->
+               {{film.original_language}}
+           <h5>{{film.vote_average}}</h5>
      </li>
   </ul>
 </template>
@@ -13,6 +17,14 @@ export default {
  data(){
     return{
        sharedComponents,
+       
+    }
+ },
+ methods:{
+    getFlegs(language){
+       if(language === 'it' ){
+          return sharedComponents.flegs.it
+       }
     }
  }
 }
