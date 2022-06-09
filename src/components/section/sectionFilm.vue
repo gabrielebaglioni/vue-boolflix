@@ -4,7 +4,8 @@
           <h3>{{film.title}}</h3>  
           <h4>{{film.original_title}}</h4> 
           <!-- <img :src="getFlegs(film.original_language)" alt=""> -->
-               {{film.original_language}}
+            <flag :iso="getFlegs(film.original_language)"/>
+               <!-- {{film.original_language}} -->
            <h5>{{film.vote_average}}</h5>
      </li>
   </ul>
@@ -17,15 +18,16 @@ export default {
  data(){
     return{
        sharedComponents,
-       
+       fleg:'',
     }
  },
  methods:{
     getFlegs(language){
-       if(language === 'it' ){
-          return sharedComponents.flegs.it
-       }
+       return language === 'en' ? 'gb' : language === 'ja' ? 'jp' : language;
     }
+ },
+ created(){
+     this.getFlegs(sharedComponents.films)
  }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="getFilmAndTv()">
+  <form @submit.prevent="getFilmAndTv">
       <input class="input-bar" type="text" placeholder="Cerca" v-model="search" />
       <button type="submit">Search</button>
   </form>
