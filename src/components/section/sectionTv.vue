@@ -1,15 +1,15 @@
 <template>
   <ul>
      <li v-for="film in sharedComponents.films" :key="film.id">
-          {{film.title}} , {{film.original_title}} , {{film.original_language}} , {{film.vote_average}}
+          {{film.name}} , {{film.original_name}} , {{film.original_language}} , {{film.vote_average}}
      </li>
   </ul>
 </template>
 
 <script>
-import sharedComponents from '../shared/sharedComponents'
+ import sharedComponents from '../shared/sharedComponents'
 export default {
- name: 'sectionFilm',
+name:'setionTv',
  data(){
     return{
        sharedComponents,
