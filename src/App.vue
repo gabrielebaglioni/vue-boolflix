@@ -15,7 +15,8 @@ export default {
   components: {
     BaseHeader,
     BaseMain
-}
+},
+ 
 }
 </script>
 

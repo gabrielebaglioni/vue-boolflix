@@ -1,12 +1,16 @@
 <template>
   <header>
      <img src="../../assets/img/netflix-false.png" alt="">
+     <SearchBar/>
   </header>
 </template>
 
 <script>
+import SearchBar from '../section/searchBar.vue';
+
 export default {
-  name: 'BaseHeader'
+    name: "BaseHeader",
+    components: { SearchBar, }
 }
 </script>
 
