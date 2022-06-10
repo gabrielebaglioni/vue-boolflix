@@ -1,6 +1,6 @@
 <template>
   <ul>
-     <li v-for="Tv in sharedComponents.Tvs" :key="Tv.id">
+     <li v-for="Tv in sharedComponents.Tv" :key="Tv.id">
           <img :src="'http://image.tmdb.org/t/p/w342' + Tv.poster_path" alt="">
           <h3>{{Tv.name}}</h3>  
           <h4>{{Tv.original_name}}</h4> 
@@ -26,7 +26,7 @@
 <script>
  import sharedComponents from '../shared/sharedComponents'
 export default {
-name:'SectionTv',
+name:'sectionTv',
  data(){
     return{
        sharedComponents,

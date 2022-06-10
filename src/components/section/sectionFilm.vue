@@ -33,7 +33,7 @@
      </li>
   </ul>
   <h2>serie Tv</h2>
-  <SectionTv/>
+  <sectionTv/>
    <!-- <ul>
      <li v-for="Tv in sharedComponents.Tv" :key="Tv.id">
           <img :src="'http://image.tmdb.org/t/p/w342' + Tv.poster_path" alt="">
@@ -63,8 +63,10 @@
 
 <script>
 import sharedComponents from '../shared/sharedComponents'
-import SectionTv from './sectionTv.vue';
+import sectionTv from './sectionTv.vue';
+
 export default {
+  components: { sectionTv },
     name: "sectionFilm",
    
     data() {
@@ -81,7 +83,7 @@ export default {
             return Math.round(vote / 2);
         },
     },
-    components: { SectionTv }
+    
 }
  
 
