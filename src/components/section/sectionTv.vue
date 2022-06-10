@@ -26,7 +26,7 @@
 <script>
  import sharedComponents from '../shared/sharedComponents'
 export default {
-name:'setionTv',
+name:'SectionTv',
  data(){
     return{
        sharedComponents,

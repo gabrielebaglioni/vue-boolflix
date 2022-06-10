@@ -58,6 +58,7 @@
   </ul> -->
  </div>
 
+
 </template>
 
 <script>
@@ -99,13 +100,16 @@ export default {
      flex-wrap: wrap;
      margin-left: 5.125rem;
  }
+ img{
+  width: 21.375rem;
+  height: 31.25rem;
+ }
  
  .container-card{
    position: relative;
    width: 100%;
-  
    overflow-wrap: break-word; 
-   overflow-y: scroll;
+  
    
  }
  .overlay {
@@ -119,7 +123,7 @@ export default {
   opacity: 0;
   transition: .5s ease;
   overflow-y: scroll;
-   background-color:#BE0810;
+  background-color:#BE0810;
   
  
 }
