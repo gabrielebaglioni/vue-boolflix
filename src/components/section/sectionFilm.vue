@@ -1,61 +1,62 @@
 <template>
 
 <div class="container">
-  <h2>FILM</h2>
+<h2>FILM</h2>
   <ul>
      <li v-for="film in sharedComponents.films" :key="film.id">
         <div class="container-card">
             <img :src="'http://image.tmdb.org/t/p/w342' + film.poster_path" alt="">
-            <div class="overlay">
-              <div class="text">
-                  <h3>{{film.title}}</h3>  
-                  <h4>{{film.original_title}}</h4> 
-                  <!-- <img :src="getFlegs(film.original_language)" alt=""> -->
-                  <flag :iso="getFlegs(film.original_language)"/>
-                        <!-- {{film.original_language}} -->
-                  <span v-if="film.vote_average <= 0">0</span>
-                  <span v-else>
-                     <!-- <i v-for="index in 5" :key="index"><span class="fa-regular fa-star"></span></i> -->
-                  <i v-for="index in getStar(film.vote_average )" :key="index" >
-                  <span class=" icon-color fas fa-star" style="color:gold"></span></i>
-                  </span>
-                  
-                     <p>
-                        <em><strong>trama:</strong></em>
-                        {{film.overview}}
-                     </p>
-                
-              </div>
+          <div class="overlay">
+            <div class="text">
+              <h3>{{film.title}}</h3>  
+              <h4>{{film.original_title}}</h4> 
+                    <!-- <img :src="getFlegs(film.original_language)" alt=""> -->
+              <flag :iso="getFlegs(film.original_language)"/>
+                          <!-- {{film.original_language}} -->
+              <span v-if="film.vote_average <= 0">0</span>
+              <span v-else>
+                      <!-- <i v-for="index in 5" :key="index"><span class="fa-regular fa-star"></span></i> -->
+              <i v-for="index in getStar(film.vote_average )" :key="index" >
+              <span class=" icon-color fas fa-star" style="color:gold"></span></i>
+              </span>
+              <p>
+                <em><strong>trama:</strong></em>
+                  {{film.overview}}
+              </p>
             </div>
+          </div>
         </div>
-         
-         
      </li>
   </ul>
   <h2>serie Tv</h2>
-  <sectionTv/>
-   <!-- <ul>
+  <!-- <sectionTv/> -->
+   <ul>
      <li v-for="Tv in sharedComponents.Tv" :key="Tv.id">
-          <img :src="'http://image.tmdb.org/t/p/w342' + Tv.poster_path" alt="">
-          <h3>{{Tv.title}}</h3>  
-          <h4>{{Tv.original_title}}</h4> 
-         
-            <flag :iso="getFlegs(Tv.original_language)"/>
-             
-           <span v-if="Tv.vote_average <= 0">0</span>
-           <span v-else>
-            
-           <i v-for="index in getStar(Tv.vote_average )" :key="index" >
-           <span class=" icon-color fas fa-star" style="color:gold"></span></i>
-           </span>
-           <div class="trama">
-            <p>
-               <em><strong>trama:</strong></em>
-               {{Tv.overview}}
-            </p>
-           </div>
+        <div class="container-card">
+            <img :src="'http://image.tmdb.org/t/p/w342' + Tv.poster_path" alt="">
+          <div class="overlay">
+            <div class="text">
+              <h3>{{Tv.name}}</h3>  
+              <h4>{{Tv.original_name}}</h4> 
+                    <!-- <img :src="getFlegs(Tv.original_language)" alt=""> -->
+              <flag :iso="getFlegs(Tv.original_language)"/>
+                          <!-- {{Tv.original_language}} -->
+              <span v-if="Tv.vote_average <= 0">0</span>
+              <span v-else>
+                      <!-- <i v-for="index in 5" :key="index"><span class="fa-regular fa-star"></span></i> -->
+              <i v-for="index in getStar(Tv.vote_average )" :key="index" >
+              <span class=" icon-color fas fa-star" style="color:gold"></span></i>
+              </span>
+              <p>
+                <em><strong>trama:</strong></em>
+                  {{Tv.overview}}
+              </p>
+            </div>
+          </div>
+        </div>
      </li>
-  </ul> -->
+  </ul>
+  
  </div>
 
 
@@ -63,10 +64,10 @@
 
 <script>
 import sharedComponents from '../shared/sharedComponents'
-import sectionTv from './sectionTv.vue';
+// import sectionTv from './sectionTv.vue';
 
 export default {
-  components: { sectionTv },
+  // components: { sectionTv },
     name: "sectionFilm",
    
     data() {
@@ -83,6 +84,11 @@ export default {
             return Math.round(vote / 2);
         },
     },
+    computed:{
+      getTv(){
+        return sharedComponents.Tv
+      }
+    }
     
 }
  
@@ -125,7 +131,8 @@ export default {
   opacity: 0;
   transition: .5s ease;
   overflow-y: scroll;
-  background-color:#BE0810;
+  // background-color:#BE0810;
+  background-color: rgba(0, 0, 0, 0.7);
   
  
 }
@@ -133,7 +140,7 @@ export default {
   opacity: 1;
 }
 .text {
-  color:black;
+  color:whitesmoke;
   font-size: 20px;
   text-align: center;
   
