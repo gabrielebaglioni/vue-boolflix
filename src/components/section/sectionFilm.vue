@@ -28,7 +28,7 @@
         </div>
      </li>
   </ul>
-  <h2>serie Tv</h2>
+  <h2>SERIE TV</h2>
   <!-- <sectionTv/> -->
    <ul>
      <li v-for="Tv in sharedComponents.Tv" :key="Tv.id">
@@ -97,20 +97,25 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-   width: calc(100% - 1.875rem);
+   width: calc(100% - 5rem);
    margin-left: auto ; 
    margin-right: auto;  
+
 }
   ul{
      list-style: none;
      display: flex;
      gap: 1.25rem;
      flex-wrap: wrap;
-     margin-left: 5.125rem;
+    //  margin-left: 5.125rem;
  }
  img{
   width: 21.375rem;
   height: 31.25rem;
+ }
+ h2{
+  text-align: center;
+  margin-bottom: 20px ;
  }
  
  .container-card{
