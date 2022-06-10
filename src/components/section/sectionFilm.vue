@@ -1,4 +1,5 @@
 <template>
+<div class="container">
   <ul>
      <li v-for="film in sharedComponents.films" :key="film.id">
           <img :src="'http://image.tmdb.org/t/p/w342' + film.poster_path" alt="">
@@ -9,12 +10,19 @@
                <!-- {{film.original_language}} -->
            <span v-if="film.vote_average <= 0">0</span>
            <span v-else>
+            <!-- <i v-for="index in 5" :key="index"><span class="fa-regular fa-star"></span></i> -->
            <i v-for="index in getStar(film.vote_average )" :key="index" >
-           <span class="star icon-color fas fa-star" style="color:gold"></span>
-            </i>
+           <span class=" icon-color fas fa-star" style="color:gold"></span></i>
            </span>
+           <div class="trama">
+            <p>
+               <em><strong>trama:</strong></em>
+               {{film.overview}}
+            </p>
+           </div>
      </li>
   </ul>
+</div>
 </template>
 
 <script>
@@ -45,6 +53,23 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
+div{
+   width: calc(100% - 1.875rem);
+   margin-left: auto ; 
+   margin-right: auto;
+   
+   
+   
+}
+  ul{
+     list-style: none;
+     display: flex;
+     gap: 1.25rem;
+     flex-wrap: wrap;
+ }
+ p{
+   width: 21.375rem;
+ }
 
 </style>

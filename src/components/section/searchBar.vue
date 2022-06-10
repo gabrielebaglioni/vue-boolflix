@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="getFilmAndTv">
       <input class="input-bar" type="text" placeholder="Cerca" v-model="search" />
-      <button type="submit">Search</button>
+     
   </form>
 </template>
 
@@ -54,6 +54,15 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+ input{
+   width: 20.25rem;
+   height: 25px;
+   border-radius: 5px;
+   border: 2px solid #BE0810;
+   
+    outline-offset: 0px;
+    outline: none;
+ }
 
 </style>
