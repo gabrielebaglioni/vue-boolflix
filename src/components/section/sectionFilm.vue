@@ -7,7 +7,12 @@
           <!-- <img :src="getFlegs(film.original_language)" alt=""> -->
             <flag :iso="getFlegs(film.original_language)"/>
                <!-- {{film.original_language}} -->
-           <h5>{{film.vote_average}}</h5>
+           <span v-if="film.vote_average <= 0">0</span>
+           <span v-else>
+           <i v-for="index in getStar(film.vote_average )" :key="index" >
+           <span class="star icon-color fas fa-star" style="color:gold"></span>
+            </i>
+           </span>
      </li>
   </ul>
 </template>
@@ -29,6 +34,9 @@ export default {
  methods:{
     getFlegs(language){
        return language === 'en' ? 'gb' : language === 'ja' ? 'jp' : language;
+    },
+    getStar(vote){
+      return Math.round(vote / 2);
     },
     
     }
