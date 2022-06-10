@@ -119,7 +119,8 @@ export default {
   opacity: 0;
   transition: .5s ease;
   overflow-y: scroll;
-  background-color:#BE0810;
+   background-color:#BE0810;
+  
  
 }
 .container-card:hover .overlay {
@@ -133,5 +134,4 @@ export default {
   
 }
  
-
 </style>
