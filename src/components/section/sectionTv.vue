@@ -1,10 +1,24 @@
 <template>
   <ul>
-     <li v-for="film in sharedComponents.films" :key="film.id">
-          <h3>{{film.name}} </h3> 
-          <h4>{{film.original_name}} </h4> 
-          <img src="" alt="">{{film.original_language}} 
-          <h5> {{film.vote_average}}</h5>
+     <li v-for="Tv in sharedComponents.Tvs" :key="Tv.id">
+          <img :src="'http://image.tmdb.org/t/p/w342' + Tv.poster_path" alt="">
+          <h3>{{Tv.name}}</h3>  
+          <h4>{{Tv.original_name}}</h4> 
+          <!-- <img :src="getFlegs(Tv.original_language)" alt=""> -->
+            <flag :iso="getFlegs(Tv.original_language)"/>
+               <!-- {{Tv.original_language}} -->
+           <span v-if="Tv.vote_average <= 0">0</span>
+           <span v-else>
+            <!-- <i v-for="index in 5" :key="index"><span class="fa-regular fa-star"></span></i> -->
+           <i v-for="index in getStar(Tv.vote_average )" :key="index" >
+           <span class=" icon-color fas fa-star" style="color:gold"></span></i>
+           </span>
+           <div class="trama">
+            <p>
+               <em><strong>trama:</strong></em>
+               {{Tv.overview}}
+            </p>
+           </div>
      </li>
   </ul>
 </template>

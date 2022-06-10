@@ -29,6 +29,8 @@ export default {
          }
         ).then((response) =>{
            sharedComponents.films = response.data.results;
+           
+
 
         }).catch((error) =>{
            console.log(error);
